@@ -11,7 +11,7 @@ export const TodoContext = createContext({
     ],
 
     addTodo : (todo) => {} ,
-    updateTodo : (todo,id) => {},
+    updateTodo : (id,todo) => {},
     checkTodo : (id) => {},
     deleteTodo : (id) => {}
 })
