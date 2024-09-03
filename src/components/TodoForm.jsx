@@ -7,7 +7,7 @@ function TodoForm() {
     const {addTodo}  = useTodo()
 
     const add = (e) => {
-        e.preventDefualt()
+        e.preventDefault()
 
         if(!todo) return
 
