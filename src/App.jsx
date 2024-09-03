@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -28,6 +28,20 @@ function App() {
 
   }
 
+  // get todos
+  useEffect(()=> {
+  const todos = JSON.parse(localStorage.getItem("todos")) 
+  if(todos && todos.length > 0){
+    setTodos(todos)
+  }
+  } ,[])
+
+
+  // setTodos
+
+  useEffect(()=> {
+    localStorage.setItem("todos",JSON.stringify(todos))
+  } ,[todos])
   return (
     <TodoProvider value={{todos,addTodo,updateTodo,checkTodo,deleteTodo}}>
  <div className="bg-[#172842] min-h-screen py-8">
